@@ -1,12 +1,13 @@
 import { IconProps } from "./types";
-import HeroIconsOulined from "@heroicons/react/outline";
-import HeroIconsSoiled from "@heroicons/react/solid";
+import * as HeroIconsOulined from "@heroicons/react/outline";
+import * as HeroIconsSoiled from "@heroicons/react/solid";
 
-const libMap = {
+const libraryMap = {
   HeroIconsOulined,
   HeroIconsSoiled,
 };
 const Icon = ({ iconLib, iconName }: IconProps): JSX.Element => {
-  return libMap[iconLib][iconName];
+  const m = libraryMap as { [key: string]: any };
+  return m[iconLib][iconName];
 };
 export default Icon;
